@@ -43,25 +43,15 @@ public class Controller implements Initializable {
     private void onSetClicked(MouseEvent e) {
         if (id.getText().isEmpty())
             return;
-
         DiscordEventHandlers handlers = new DiscordEventHandlers();
-
         DiscordRPC.discordInitialize(id.getText(), handlers, true, "");
-
         DiscordRichPresence presence = new DiscordRichPresence();
-
         presence.details = details.getText().isEmpty() ? null : details.getText();
-
         presence.state = state.getText().isEmpty() ? null : state.getText();
-
         presence.smallImageKey = imgKeySmall.getText().isEmpty() ? null : imgKeySmall.getText();
-
         presence.largeImageKey = imgKeyBig.getText().isEmpty() ? null : imgKeyBig.getText();
-
         DiscordRPC.discordUpdatePresence(presence);
-
         Main.discordRunning = true;
-
     }
 
     @Override
@@ -70,7 +60,6 @@ public class Controller implements Initializable {
             this.xOffset = Main.stage.getX() - event.getScreenX();
             this.yOffset = Main.stage.getY() - event.getScreenY();
         });
-
         header.setOnMouseDragged(event -> {
             Main.stage.setX(event.getScreenX() + this.xOffset);
             Main.stage.setY(event.getScreenY() + this.yOffset);
