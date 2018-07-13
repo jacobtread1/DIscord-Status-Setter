@@ -1,2 +1,2 @@
 # DIscord-Status-Setter
-A Discord
+A Discord Status Settter using JavaFx and Discord-RPC
